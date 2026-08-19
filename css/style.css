@@ -1,22 +1,9 @@
 /* ============================================================
    SOLI — Creative Worlds
    Design system: dark cinematic base + SOLI energy accents
+   Anton (display, loaded via Google Fonts) + Sora (body/UI)
    ============================================================ */
 
-@font-face {
-  font-family: "Fraunces";
-  src: url("../fonts/Fraunces-Variable.ttf") format("truetype-variations");
-  font-weight: 300 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Fraunces";
-  src: url("../fonts/Fraunces-Italic-Variable.ttf") format("truetype-variations");
-  font-weight: 300 700;
-  font-style: italic;
-  font-display: swap;
-}
 @font-face {
   font-family: "Sora";
   src: url("../fonts/Sora-Variable.ttf") format("truetype-variations");
@@ -45,8 +32,8 @@
   --grad-energy: linear-gradient(90deg, var(--cyan), var(--purple) 45%, var(--magenta) 100%);
   --grad-energy-soft: linear-gradient(120deg, rgba(112,251,255,0.5), rgba(172,125,230,0.5) 45%, rgba(239,102,156,0.5) 100%);
 
-  /* type */
-  --f-display: "Fraunces", ui-serif, Georgia, serif;
+  /* type — Anton (bold condensed editorial display) + Sora (clean body/UI) */
+  --f-display: "Anton", "Arial Narrow", Impact, sans-serif;
   --f-body: "Sora", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
   --ease-out: cubic-bezier(.16,.8,.24,1);
@@ -68,11 +55,12 @@ a { color: inherit; }
 
 ::selection { background: var(--purple); color: #050505; }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: var(--f-display);
-  font-weight: 560;
-  letter-spacing: -0.02em;
-  line-height: 1.02;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+  line-height: 1.06;
 }
 
 .kicker {
@@ -156,15 +144,16 @@ p.lead {
   border-bottom: 1px solid rgba(244,241,236,0.06);
 }
 #nav.on { opacity: 1; pointer-events: auto; transform: none; }
-#nav .mark { font-family: var(--f-display); font-size: 18px; letter-spacing: 0.01em; display: flex; align-items: baseline; gap: 2px; }
-#nav .mark b { font-weight: 600; }
-#nav .mark .plus { color: var(--cyan); font-size: 14px; }
+#nav .mark { font-family: var(--f-display); font-size: 20px; letter-spacing: 0.005em; text-transform: uppercase; display: flex; align-items: baseline; gap: 2px; }
+#nav .mark b { font-weight: 400; }
+#nav .mark .plus { color: var(--cyan); font-size: 15px; }
 #nav .links { display: flex; gap: 2.6vw; }
-#nav a.navlink { color: var(--text-dim); text-decoration: none; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; transition: color 0.25s; }
+#nav a.navlink { font-family: var(--f-display); color: var(--text-dim); text-decoration: none; font-size: 13px; letter-spacing: 0.03em; text-transform: uppercase; transition: color 0.25s; }
 #nav a.navlink:hover { color: var(--text); }
 #nav .navcta {
+  font-family: var(--f-display);
   border: 1px solid rgba(244,241,236,0.3); border-radius: 100px; padding: 9px 22px;
-  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
+  font-size: 12px; letter-spacing: 0.03em; text-transform: uppercase; text-decoration: none;
   transition: border-color 0.3s, background 0.3s, color 0.3s;
 }
 #nav .navcta:hover { border-color: var(--cyan); color: var(--bg); background: var(--cyan); }
@@ -234,10 +223,10 @@ p.lead {
 /* ── CTA button ─────────────────────────────────────────── */
 .cta-btn {
   display: inline-flex; align-items: center; gap: 10px;
-  margin-top: 32px; padding: 15px 36px; pointer-events: auto;
+  margin-top: 32px; padding: 14px 34px; pointer-events: auto;
   border: 1px solid rgba(244,241,236,0.35); border-radius: 100px;
-  color: var(--text); text-decoration: none;
-  font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text); text-decoration: none; font-family: var(--f-display);
+  font-size: 14px; letter-spacing: 0.03em; text-transform: uppercase;
   background: rgba(244,241,236,0.03);
   transition: border-color 0.35s, background 0.35s, box-shadow 0.35s, color 0.35s;
 }
@@ -288,13 +277,13 @@ p.lead {
    Stamp heading — bold condensed poster-style section titles
    ============================================================ */
 .stamp-heading {
-  font-family: var(--f-body); font-weight: 800; text-transform: uppercase;
-  letter-spacing: -0.01em; font-size: clamp(30px, 4.2vw, 56px); line-height: 1;
+  font-family: var(--f-display); font-weight: 400; text-transform: uppercase;
+  letter-spacing: 0.005em; font-size: clamp(32px, 4.6vw, 60px); line-height: 1;
   max-width: none;
 }
 .stamp-label {
-  font-family: var(--f-body); font-weight: 800; text-transform: uppercase;
-  letter-spacing: 0.01em; font-size: 16px; margin-bottom: 12px;
+  font-family: var(--f-display); font-weight: 400; text-transform: uppercase;
+  letter-spacing: 0.01em; font-size: 18px; margin-bottom: 12px;
 }
 
 /* ============================================================
@@ -449,10 +438,10 @@ p.lead {
 .contact-submit:hover { background: #14131a; box-shadow: 0 0 30px rgba(239,102,156,0.4); }
 
 .thanks-line {
-  text-align: center; margin-top: 6vh; font-family: var(--f-body); font-weight: 800;
-  text-transform: uppercase; font-size: 15px; letter-spacing: 0.04em;
+  text-align: center; margin-top: 6vh; font-family: var(--f-display); font-weight: 400;
+  text-transform: uppercase; font-size: 17px; letter-spacing: 0.02em;
 }
-.thanks-line span { display: block; margin-top: 8px; font-weight: 500; font-size: 11px; letter-spacing: 0.2em; color: var(--text-faint); }
+.thanks-line span { display: block; margin-top: 8px; font-weight: 500; font-size: 11px; letter-spacing: 0.2em; color: var(--text-faint); font-family: var(--f-body); }
 
 /* ============================================================
    FOOTER — simplified: legal links + socials + copyright
