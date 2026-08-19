@@ -1,5 +1,6 @@
 import { initNav } from "./engine/nav.js";
 import { initReveal } from "./engine/reveal.js";
+import { initContactForm } from "./engine/contactForm.js";
 import { initHero } from "./worlds/hero.js";
 import { initProject } from "./worlds/project.js";
 import { initCta } from "./worlds/cta.js";
@@ -34,3 +35,4 @@ initPortfolio();
 
 initNav();
 initReveal();
+initContactForm();
